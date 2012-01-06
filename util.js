@@ -23,7 +23,7 @@ function getMarks(kurs, hj) {
 		}
 		else {
 			for (var k in halbjahr) {
-				if (halbjahr[k] != null) {
+				if (k == kurs) {
 					nots.push(halbjahr[k])
 				}
 			}
