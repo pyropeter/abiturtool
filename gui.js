@@ -45,7 +45,7 @@ function saveNotentabelle() {
 		var note = input.val();
 		if (note.length) {
 			note = parseInt(note);
-			if (note === NaN)
+			if (isNaN(note))
 				noten[input.data("halbjahr")][
 					input.data("fach")] = null;
 			else
