@@ -6,7 +6,7 @@ var noten = {
 	"11.2": {
 		"mat": 2,
 		"deu": 6,
-	}
+	},
 	"12.1": {
 		"mat": null,
 		"deu": null,

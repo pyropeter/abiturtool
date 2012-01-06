@@ -37,10 +37,10 @@ var faecher = {
 	wirh: Fach("Wirtschaft (Hauptfach)", 4, 2, true),
 	
 	// Aufgabenfeld 3
-	phy: Fach("Physik", 2, ??, false),
-	phyh: Fach("Physik (Hauptfach)", 4, ??, true),
+	phy: Fach("Physik", 2, 3, false),
+	phyh: Fach("Physik (Hauptfach)", 4, 3, true),
 	che: Fach("Chemie", 2, 3, false),
-	cheh: Fach("Chemie (Hauptfach)", 4, 3, true)
+	cheh: Fach("Chemie (Hauptfach)", 4, 3, true),
 	bio: Fach("Biologie", 2, 3, false),
 	bioh: Fach("Biologie (Hauptfach)", 4, 3, true),
 	inf: Fach("Informatik", 2, 3, false),
