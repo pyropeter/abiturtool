@@ -9,3 +9,8 @@ function hasOneAttr(list, attrlist) {
 	}
 	return false;
 }
+
+function getMarks() {
+	return; // todo
+}
+
