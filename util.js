@@ -10,7 +10,25 @@ function hasOneAttr(list, attrlist) {
 	return false;
 }
 
-function getMarks() {
-	return; // todo
+function getMarks(kurs, hj) {
+	nots = []
+	for (var i in noten) {
+		var halbjahr = noten[i]
+		if (hj != null) {
+			for (var j in hj) {
+				if (hj[j] == halbjahr) {
+					nots.push(halbjahr[kurs])
+				}
+			}
+		}
+		else {
+			for (var k in halbjahr) {
+				if (halbjahr[k] != null) {
+					nots.push(halbjahr[k])
+				}
+			}
+		}
+	}
+	return nots
 }
 
