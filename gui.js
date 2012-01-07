@@ -38,7 +38,7 @@ function loadNotentabelle() {
 
 function saveNotentabelle() {
 	for (var i in noten)
-		noten[i] = [];
+		noten[i] = {};
 
 	$("#noten input").each(function () {
 		var input = $(this);
@@ -55,8 +55,46 @@ function saveNotentabelle() {
 	});
 }
 
+function formatNotentabelle() {
+	$("#noten input").each(function () {
+		var input = $(this);
+		var note = input.val();
+		if (note.length) {
+			input.addClass("belegt");
+			note = parseInt(note);
+			if (isNaN(note))
+				input.removeClass("bekannt");
+			else
+				input.addClass("bekannt");
+		} else {
+			input.removeClass("belegt");
+		}
+	});
+}
+
+function testeBelegungsverpflichtungen() {
+	var tabelle = $("#belegungsfehler")
+		.empty()
+		.append($("<tr><th>Regel</th><th>erfüllt?</th></tr>"));
+
+	for (var i in belegungsverpflichtungen) {
+		var bv = belegungsverpflichtungen[i];
+		var erfuellt = bv.testfunc() ? "ja" : "nein";
+		tabelle.append($("<tr>")
+			.append($("<td>").text(bv.text))
+			.append($("<td>").text(erfuellt)));
+	}
+}
+
 $(function() {
 	initNotentabelle();
 	loadNotentabelle();
+	formatNotentabelle();
+
+	$("#noten").keyup(function () {
+		saveNotentabelle();
+		formatNotentabelle();
+		testeBelegungsverpflichtungen();
+	});
 });
 

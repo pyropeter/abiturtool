@@ -1,0 +1,8 @@
+input.belegt {
+	background-color: rgba(0,255,255,0.5);
+}
+
+input.belegt.bekannt {
+	background-color: rgba(0,255,0,0.5);
+}
+

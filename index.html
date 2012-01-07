@@ -12,13 +12,24 @@
 		<script src="http://keks.upful.org/static/jquery-1.4.2.js">
 		</script>
 		<script src="gui.js"></script>
+		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<h1>Noteneingabe</h1>
-		<table id="noten">
-		</table>
+		<h1>Eingabe: Noten</h1>
+		<dl>
+			<dt> Unbelegter Kurs:
+			<dd> <input class="" value="">
+			<dt> Belegter Kurs mit bekannter Note:
+			<dd> <input class="belegt" value="12">
+			<dt> Belegter Kurs mit unbekannter Note:
+			<dd> <input class="belegt bekannt" value="?">
+		</dl>
+		<table id="noten"></table>
 
-		<h1>Auswahl Prüfungsfächer</h1>
+		<h1>Ausgabe: Belegungsverpflichtungen</h1>
+		<table id="belegungsfehler"></table>
+
+		<h1>Eingabe: Auswahl Prüfungsfächer</h1>
 		<!-- -->
 
 		<h1>Ausgabe: Einzubringende Kurse </h1>

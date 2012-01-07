@@ -1,3 +1,5 @@
+var beurlaubung = false;
+
 var noten = {
 	"11.1": {
 		"mat": 1,
