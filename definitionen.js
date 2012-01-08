@@ -7,9 +7,9 @@ var Fach = function(name, ws, aufgabenfeld, hf) {
 
 var faecher = {
 	// Kernfächer
-	deu: new Fach("Deutsch", 4, 1, true),
-	eng: new Fach("Englisch", 4, 1, true),
-	mat: new Fach("Mathematik", 4, 3, true),
+	deu: new Fach("Deutsch", 4, 1, false),
+	eng: new Fach("Englisch", 4, 1, false),
+	mat: new Fach("Mathematik", 4, 3, false),
 	
 	// Aufgabenfeld 1
 	kun: new Fach("Kunst", 2, 1, false),
