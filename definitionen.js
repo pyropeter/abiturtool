@@ -58,3 +58,9 @@ var aufgabenfelder = {
 	3: "Mathematisch-naturwissenschaftlich-technisches",
 }
 
+var hauptfaecherleisten = [
+	["kunh","mush","gesh","relh","phyh","bioh"],
+	["polh","geoh","wirh","relh","infh","bioh"],
+	["frah","lath","spah","gesh","wirh","cheh"],
+];
+

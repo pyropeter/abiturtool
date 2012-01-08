@@ -29,4 +29,7 @@ var noten = {
 		"gesh": 4,
 		"spa": 15,
 	},
-}
+};
+
+var hauptfaecher = ["phyh", "infh", "cheh"];
+
