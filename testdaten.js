@@ -31,5 +31,3 @@ var noten = {
 	},
 };
 
-var hauptfaecher = ["phyh", "infh", "cheh"];
-
