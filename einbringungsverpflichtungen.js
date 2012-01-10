@@ -25,8 +25,8 @@ for (var i in geschichtsnoten) {
 }
 
 // 4 Kurse fortgesetze Fremdsprache
-marks = []
-fort_fremd = ["spa", "spah", "lat", "lath", "eng", "fra", "frah"]
+var marks = []
+var fort_fremd = ["spa", "spah", "lat", "lath", "eng", "fra", "frah"]
 for (var n in fort_fremd) {
 	for (var h in noten) {
 		if (typeof noten[h][fort_fremd[n]] != "undefined") {
@@ -39,12 +39,40 @@ for (var n in fort_fremd) {
 	}
 }
 marks.sort(function(a, b) {return b.note - a.note})
-c = 3
+c = 4
 for (var f in marks) {
 	if (!einbringungen[marks[f].fach])
 		einbringungen[marks[f].fach] = []
 	einbringungen[marks[f].fach].push(marks[f].hj)
-	if (c == 0)
+	if (c == 1)
 		break
 	c--
 }
+
+// 2 Kurse Kunst oder Musik oder Darstellendes Spiel
+var markss = []
+var kumuda = ["kun", "kunh", "mus", "mush", "dar"]
+for (var n in kumuda) {
+  for (var h in noten) {
+    if (typeof noten[h][kumuda[n]] != "undefined") {
+      markss.push({
+        note: noten[h][kumuda[n]],
+        fach: kumuda[n],
+        hj: h,
+      })
+    }
+  }
+}
+markss.sort(function(a, b) {return b.note - a.note})
+c = 2
+for (var f in markss) {
+  if (!einbringungen[markss[f].fach])
+    einbringungen[markss[f].fach] = []
+  einbringungen[markss[f].fach].push(markss[f].hj)
+  if (c == 1)
+    break
+  c--
+}
+
+// 4 Kurse einer Naturwissenschaft oder 2 x 2 Kurse aus zwei Naturwissenschaften
+
