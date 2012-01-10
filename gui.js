@@ -86,15 +86,33 @@ function testeBelegungsverpflichtungen() {
 	}
 }
 
+function refresh() {
+	testeBelegungsverpflichtungen();
+}
+
 $(function() {
 	initNotentabelle();
 	loadNotentabelle();
 	formatNotentabelle();
 
+	$("#beurlaubungscb").change(function () {
+		beurlaubung = this.checked;
+		refresh();
+	});
+
+	$("#projektarbeitsnote").keyup(function () {
+		projektarbeit = parseInt($(this).val());
+		if (isNaN(projektarbeit))
+			$(this).removeClass("belegt");
+		else
+			$(this).addClass("belegt");
+		refresh();
+	});
+
 	$("#noten").keyup(function () {
 		saveNotentabelle();
 		formatNotentabelle();
-		testeBelegungsverpflichtungen();
+		refresh();
 	});
 });
 
