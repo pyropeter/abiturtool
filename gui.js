@@ -88,12 +88,14 @@ function testeBelegungsverpflichtungen() {
 
 function refresh() {
 	testeBelegungsverpflichtungen();
+	bringeEin();
 }
 
 $(function() {
 	initNotentabelle();
 	loadNotentabelle();
 	formatNotentabelle();
+	refresh();
 
 	$("#beurlaubungscb").change(function () {
 		beurlaubung = this.checked;
