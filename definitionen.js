@@ -26,7 +26,7 @@ var faecher = {
 	
 	// Aufgabenfeld 2
 	ges: new Fach("Geschichte", 2, 2, false),
-	gesh: new Fach("Geschichte", 4, 2, true),
+	gesh: new Fach("Geschichte (Hauptfach)", 4, 2, true),
 	rel: new Fach("Religion", 2, 2, false),
 	relh: new Fach("Religion (Hauptfach)", 4, 2, true),
 	geo: new Fach("Geographie", 2, 2, false),

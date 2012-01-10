@@ -10,31 +10,41 @@ geschichtsnoten.sort(function(a, b) {return b - a});
 geschichtsnoten = geschichtsnoten.slice(0,2);
 for (var i in geschichtsnoten) {
 	for (var j in noten) {
-		console.log(noten[j]["ges"])
-		console.log(geschichtsnoten[i])
 		if (noten[j]["ges"] == geschichtsnoten[i]) {
 			if (!einbringungen["ges"])
 					einbringungen["ges"] = [];
-			einbringungen["ges"].push(geschichtsnoten[i]);
+			einbringungen["ges"].push(j);
 			break;
 		} else if (noten[j]["gesh"] == geschichtsnoten[i]) {
 			if (!einbringungen["gesh"])
 				einbringungen["gesh"] = [];
-			einbringungen["gesh"].push(geschichtsnoten[i]);
+			einbringungen["gesh"].push(j);
 			break;
-		} else {
-			throw ("up")
 		}
 	}
 }
 
 // 4 Kurse fortgesetze Fremdsprache
-marks = {}
+marks = []
 fort_fremd = ["spa", "spah", "lat", "lath", "eng", "fra", "frah"]
 for (var n in fort_fremd) {
-	marks[fort_fremd[n]] = getMarks(fort_fremd[n])
+	for (var h in noten) {
+		if (typeof noten[h][fort_fremd[n]] != "undefined") {
+			marks.push({
+				note: noten[h][fort_fremd[n]],
+				fach: fort_fremd[n],
+				hj: h,
+			})
+		}
+	}
 }
-for (var m in marks) {
-	marks[m].sort(function(a, b) {return b - a})
+marks.sort(function(a, b) {return b.note - a.note})
+c = 3
+for (var f in marks) {
+	if (!einbringungen[marks[f].fach])
+		einbringungen[marks[f].fach] = []
+	einbringungen[marks[f].fach].push(marks[f].hj)
+	if (c == 0)
+		break
+	c--
 }
-console.log(marks)
