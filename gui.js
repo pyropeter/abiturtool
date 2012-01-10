@@ -1,3 +1,6 @@
+var hauptfaecher = [];
+var nebenfaecher = [];
+
 function initNotentabelle() {
 	var tabelle = $("#noten");
 	tabelle.empty();
@@ -96,6 +99,23 @@ $(function() {
 	loadNotentabelle();
 	formatNotentabelle();
 	refresh();
+
+	var hfs = {};
+	for (var i in faecher) {
+		if (faecher[i].hf) {
+			hfs[i] = faecher[i].name;
+		}
+	}
+	new MultiSelect($('#hauptfaecher'), "hauptfaecher", 3, hfs);
+
+	var nfs = {};
+	var blacklist = ["deu", "eng", "mat", "sporti", "sportg"];
+	for (var i in faecher) {
+		if (!faecher[i].hf && blacklist.indexOf(i) == -1) {
+			nfs[i] = faecher[i].name;
+		}
+	}
+	new MultiSelect($('#nebenfaecher'), "nebenfaecher", 0, nfs);
 
 	$("#beurlaubungscb").change(function () {
 		beurlaubung = this.checked;
